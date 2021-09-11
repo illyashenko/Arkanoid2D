@@ -15,7 +15,7 @@ void Ball::draw(RenderWindow& window)
 //--------------------------------------------------------------
 void Ball::update(float time)
 {
-	shape_.move(velocity *time * 0.015f);
+	shape_.move(velocity *time * 0.01f);
 
 	if (shape_.getPosition().x < 0.1f)
 		velocity.x = - velocity.x;
