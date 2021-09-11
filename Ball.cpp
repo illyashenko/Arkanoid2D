@@ -3,7 +3,7 @@
 Ball::Ball()
 {
 	shape_.setRadius(8.f);
-	shape_.setFillColor(Color::Yellow);
+	shape_.setFillColor(Color(255, 255, 0, 128));
 	shape_.setPosition(225.0710f, 400.f);
 	setAngle(20.f);
 }

@@ -142,16 +142,19 @@
   <ItemGroup>
     <ClCompile Include="Arkanoid_2d_new.cpp" />
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="constants.cpp" />
     <ClCompile Include="Paddle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="Paddle.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="blok_blue.png" />
     <Image Include="materiya.jpg" />
     <Image Include="puddle2.png" />
   </ItemGroup>

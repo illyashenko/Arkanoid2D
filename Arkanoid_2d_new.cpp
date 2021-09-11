@@ -16,12 +16,16 @@ int main()
                         , Style::Close | Style::Titlebar
                         , settings);
 
-    Texture tx;
-    tx.loadFromFile("materiya.jpg");
-    Sprite sp;
-    sp.setTexture(tx);
-
     Clock clock;
+
+    Image im;
+    im.loadFromFile("blok_blue.png");
+    im.createMaskFromColor(Color::White);
+    Texture tx;
+    tx.loadFromImage(im);
+    Sprite s;
+    s.setTexture(tx);
+    s.setPosition(50.f, 100.f);
 
     Paddle* paddle = new Paddle();
     Ball* ball = new Ball();
@@ -43,10 +47,10 @@ int main()
         ball->update(time);
         ball->checkColission(paddle);
 
-        window.clear(Color::Cyan);
-        window.draw(sp);
+        window.clear(Color(70, 130, 180));
         paddle->draw(window);
         ball->draw(window);
+        window.draw(s);
         window.display();
     }
     return 0;

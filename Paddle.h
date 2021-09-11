@@ -31,6 +31,7 @@ public:
 
 private:
 	Texture texture_;
+	float speed_;
 
 	std::string getImage(PaddleType p_type);
 };

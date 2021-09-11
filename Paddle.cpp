@@ -1,6 +1,6 @@
 #include "Paddle.h"
 
-Paddle::Paddle()
+Paddle::Paddle() : speed_(0.2f)
 {
 	Image image;
 	image.loadFromFile("puddle2.png");
@@ -32,11 +32,11 @@ void Paddle::update(float time)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Right) && Right < Constants::WHIDTH)
 	{
-		sprite.move(0.1f * time, 0);
+		sprite.move(speed_ * time, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Left) && Left > 0)
 	{
-		sprite.move(-0.1f * time, 0);
+		sprite.move(-speed_ * time, 0);
 	}
 }
 //-------------------------------------------------------

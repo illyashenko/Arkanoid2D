@@ -27,6 +27,9 @@
     <ClCompile Include="Ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Paddle.h">
@@ -41,12 +44,18 @@
     <ClInclude Include="Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="puddle2.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="materiya.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="blok_blue.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
