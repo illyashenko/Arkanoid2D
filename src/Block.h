@@ -31,5 +31,7 @@ public:
 private:
 	Sprite sprite_;
 	Texture texture_;
+
+	std::string getImage(BlockType blocType);
 };
 

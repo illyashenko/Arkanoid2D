@@ -39,4 +39,21 @@ void Block::setPosition(Vector2f position)
 {
 	sprite_.setPosition(position);
 }
+std::string Block::getImage(BlockType blocType)
+{
+	switch (blocType)
+	{
+	case BlockType::SINGLE :
+		return "graphics/blok_blue.png";
+	case BlockType::DOUBLE : 
+		return "";
+	case BlockType::TRIPLE : 
+		return "";
+	case BlockType::BROKEN :
+		return "graphics/destruction_block.png";
+	default:
+		return "";
+		break;
+	}
+}
 //--------------------------------------------------------------

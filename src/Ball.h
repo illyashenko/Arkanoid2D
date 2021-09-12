@@ -1,6 +1,7 @@
 #pragma once
 #include "IEntity.h"
 #include "Paddle.h"
+#include "Block.h"
 
 #define M_PI 3.14159265358979323846
 
@@ -17,7 +18,7 @@ public:
 	void setAngle(float angle);
 	float getAngle();
 	bool checkColission(Paddle* paddle);
-	bool checkColission();
+	bool checkColission(Block* block);
 
 	float getLeft();
 	float getRight();

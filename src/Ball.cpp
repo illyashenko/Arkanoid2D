@@ -30,7 +30,7 @@ void Ball::setAngle(float angle)
 }
 float Ball::getAngle()
 {
-	float angle = std::atan2(-velocity.y, velocity.x) * 180 / M_PI;
+	float angle = std::atan2(-velocity.y, velocity.x) * 180.f / (float)M_PI;
 
 	if (angle < 0.f)
 		angle += 360.f;
@@ -53,7 +53,7 @@ bool Ball::checkColission(Paddle* paddle)
 	}
 	return false;
 }
-bool Ball::checkColission()
+bool Ball::checkColission(Block* block)
 {
 	return false;
 }
@@ -64,7 +64,7 @@ float Ball::getLeft()
 }
 float Ball::getRight()
 {
-	return shape_.getPosition().x + shape_.getRadius()*2;
+	return shape_.getPosition().x + shape_.getRadius() * 2;
 }
 float Ball::getTop()
 {
@@ -72,6 +72,6 @@ float Ball::getTop()
 }
 float Ball::getBottom()
 {
-	return shape_.getPosition().y + shape_.getRadius()*2;
+	return shape_.getPosition().y + shape_.getRadius() * 2;
 }
 //--------------------------------------------------------------

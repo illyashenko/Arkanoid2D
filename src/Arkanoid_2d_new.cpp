@@ -66,7 +66,7 @@ int main()
 
         if (Keyboard::isKeyPressed(Keyboard::Space))
         {
-            currentFrame += 0.001 * time;
+            currentFrame += 0.001f * time;
             if (currentFrame > 3)
                 currentFrame -= 3;
             destruction.setTextureRect(IntRect(85 * int(currentFrame), 0, 85, 33));
