@@ -19,7 +19,7 @@ int main()
     Clock clock;
 
     Image im;
-    im.loadFromFile("blok_blue.png");
+    im.loadFromFile("graphics/blok_blue.png");
     im.createMaskFromColor(Color::White);
     Texture tx;
     tx.loadFromImage(im);
@@ -28,7 +28,7 @@ int main()
     s.setPosition(50.f, 100.f);
 
     Image im_e;
-    im_e.loadFromFile("destruction_block.png");
+    im_e.loadFromFile("graphics/destruction_block.png");
     im_e.createMaskFromColor(Color::White);
     Texture tx_e;
     tx_e.loadFromImage(im_e);

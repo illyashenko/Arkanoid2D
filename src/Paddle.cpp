@@ -3,7 +3,7 @@
 Paddle::Paddle() : speed_(0.2f)
 {
 	Image image;
-	image.loadFromFile("puddle2.png");
+	image.loadFromFile("graphics/puddle2.png");
 	image.createMaskFromColor(Color::White);
 	texture_.loadFromImage(image);
 

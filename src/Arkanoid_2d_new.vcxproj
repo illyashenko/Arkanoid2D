@@ -154,11 +154,14 @@
     <ClInclude Include="Paddle.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Ball2.png" />
-    <Image Include="blok_blue.png" />
-    <Image Include="destruction.png" />
-    <Image Include="materiya.jpg" />
-    <Image Include="puddle2.png" />
+    <Image Include="graphics\Ball2.png" />
+    <Image Include="graphics\blok_blue.png" />
+    <Image Include="graphics\destruction.png" />
+    <Image Include="graphics\destruction2.png" />
+    <Image Include="graphics\destruction_block.png" />
+    <Image Include="graphics\materiya.jpg" />
+    <Image Include="graphics\puddle1.png" />
+    <Image Include="graphics\puddle2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

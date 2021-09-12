@@ -49,19 +49,28 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="puddle2.png">
+    <Image Include="graphics\blok_blue.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="materiya.jpg">
+    <Image Include="graphics\Ball2.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="blok_blue.png">
+    <Image Include="graphics\destruction.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Ball2.png">
+    <Image Include="graphics\destruction_block.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="destruction.png">
+    <Image Include="graphics\destruction2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="graphics\materiya.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="graphics\puddle1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="graphics\puddle2.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
