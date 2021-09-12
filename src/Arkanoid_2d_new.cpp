@@ -1,7 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "constants.h"
-#include "Paddle.h"
 #include "Ball.h"
 
 using namespace sf;
@@ -18,29 +17,20 @@ int main()
 
     Clock clock;
 
-    Image im;
-    im.loadFromFile("graphics/blok_blue.png");
-    im.createMaskFromColor(Color::White);
-    Texture tx;
-    tx.loadFromImage(im);
-    Sprite s;
-    s.setTexture(tx);
-    s.setPosition(50.f, 100.f);
-
-    Image im_e;
+   /* Image im_e;
     im_e.loadFromFile("graphics/destruction_block.png");
     im_e.createMaskFromColor(Color::White);
     Texture tx_e;
     tx_e.loadFromImage(im_e);
     Sprite destruction;
     destruction.setTexture(tx_e);
-    destruction.setTextureRect(IntRect(0, 0, 255, 33));
-    destruction.setPosition(100.f, 200.f);
+    destruction.setPosition(100.f, 200.f);*/
 
     float currentFrame = 0.f;
 
     Paddle* paddle = new Paddle();
     Ball* ball = new Ball();
+    Block* block = new Block();
 
     while (window.isOpen())
     {
@@ -64,19 +54,23 @@ int main()
 
         window.clear(Color(70, 130, 180));
 
-        if (Keyboard::isKeyPressed(Keyboard::Space))
+        if (Keyboard::isKeyPressed(Keyboard::Space) && block)
         {
-            currentFrame += 0.001f * time;
-            if (currentFrame > 3)
-                currentFrame -= 3;
-            destruction.setTextureRect(IntRect(85 * int(currentFrame), 0, 85, 33));
-            //destruction.move(0.02 * time, 0);
-            window.draw(destruction);
+            block->exchangeBlock(BlockType::BROKEN);
+            block->update(time);
+            if (block->stopFrame()) {
+                delete block;
+                block = nullptr;
+            }
         }
 
         paddle->draw(window);
+        
+        if (block) {
+            block->draw(window);
+        }
+
         ball->draw(window);
-        window.draw(s);
         window.display();
     }
     return 0;

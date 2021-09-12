@@ -23,6 +23,10 @@ public:
 	float getTop();
 	float getBottom();
 	void setPosition(Vector2f position);
+	BlockType getBlockType();
+	void setBlockType(BlockType blockType);
+	void exchangeBlock(BlockType blockType);
+	bool stopFrame();
 
 	_declspec(property(get = getLeft)) float Left;
 	_declspec(property(get = getRight)) float Right;
@@ -31,7 +35,10 @@ public:
 private:
 	Sprite sprite_;
 	Texture texture_;
+	BlockType blocType_;
+	float currentFrame;
+	bool stop;
 
-	std::string getImage(BlockType blocType);
+	std::string getImage();
 };
 
