@@ -18,7 +18,7 @@ public:
 	Paddle();
 	Paddle(PaddleType p_type);
 	void draw(RenderWindow& window);
-	void update(float time);
+	void update(const float& time);
 	float getRight();
 	float getLeft();
 	float getTop();

@@ -7,7 +7,8 @@ enum class BlockType
 {
 	SINGLE,
 	DOUBLE,
-	TRIPLE
+	TRIPLE,
+	BROKEN
 };
 
 class Block : public IEntity
@@ -16,11 +17,12 @@ public:
 	Block();
 	Block(BlockType blockType, Vector2f position);
 	void draw(RenderWindow& window);
-	void update(float time);
+	void update(const float& time);
 	float getLeft();
 	float getRight();
 	float getTop();
 	float getBottom();
+	void setPosition(Vector2f position);
 
 	_declspec(property(get = getLeft)) float Left;
 	_declspec(property(get = getRight)) float Right;

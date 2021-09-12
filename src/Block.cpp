@@ -13,7 +13,7 @@ void Block::draw(RenderWindow& window)
 	window.draw(sprite_);
 }
 //--------------------------------------------------------------
-void Block::update(float time)
+void Block::update(const float& time)
 {
 
 }
@@ -33,5 +33,10 @@ float Block::getTop()
 float Block::getBottom()
 {
 	return sprite_.getPosition().y + 20;
+}
+//--------------------------------------------------------------
+void Block::setPosition(Vector2f position)
+{
+	sprite_.setPosition(position);
 }
 //--------------------------------------------------------------

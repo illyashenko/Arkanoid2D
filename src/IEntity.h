@@ -5,5 +5,5 @@
 __interface IEntity
 {
 	void draw(sf::RenderWindow& window);
-	void update(float time);
+	void update(const float& time);
 };

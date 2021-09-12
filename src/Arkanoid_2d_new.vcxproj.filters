@@ -58,5 +58,11 @@
     <Image Include="blok_blue.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Ball2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="destruction.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

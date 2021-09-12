@@ -2,10 +2,10 @@
 
 Ball::Ball()
 {
-	shape_.setRadius(8.f);
-	shape_.setFillColor(Color(255, 255, 0, 128));
+	shape_.setRadius(10.f);
+	shape_.setFillColor(Color(255, 255, 0));
 	shape_.setPosition(225.0710f, 400.f);
-	setAngle(20.f);
+	setAngle(25.f);
 }
 //--------------------------------------------------------------
 void Ball::draw(RenderWindow& window)
@@ -13,18 +13,14 @@ void Ball::draw(RenderWindow& window)
 	window.draw(shape_);
 }
 //--------------------------------------------------------------
-void Ball::update(float time)
+void Ball::update(const float& time)
 {
-	shape_.move(velocity *time * 0.01f);
+	shape_.move(velocity * time * 0.01f);
 
-	if (shape_.getPosition().x < 0.1f)
+	if (Left < 0.1f || Right > Constants::WHIDTH)
 		velocity.x = - velocity.x;
-	if(shape_.getPosition().x > (Constants::WHIDTH - 16))
-		velocity.x = -velocity.x;
-	if (shape_.getPosition().y < 0.1f)
+	if (Top < 0.1f || Bottom > Constants::HEIGH)
 		velocity.y = -velocity.y;
-	if (shape_.getPosition().y > (Constants::HEIGH - 16))
-		velocity.y = - velocity.y;
 }
 //--------------------------------------------------------------
 void Ball::setAngle(float angle)
@@ -44,15 +40,15 @@ float Ball::getAngle()
 //--------------------------------------------------------------
 bool Ball::checkColission(Paddle* paddle)
 {
-	if (Left < paddle->Right && Right > paddle->Left && Top < paddle->Top && Bottom >= paddle->Top)
+	if (Left < paddle->Right && Right > paddle->Left && Top < paddle->Top && Bottom > paddle->Top)
 	{
-
 		float deviation = 50.f;
-		bool leftSide = shape_.getPosition().x < paddle->getPosition().x;
-		float distanceFromCenter = std::abs(shape_.getPosition().x - paddle->getPosition().x);
-		float percantage = distanceFromCenter / ((float)paddle->getSize().x / 2.f);
-		float angle = 90.f - percantage * deviation * (leftSide ? -1.f : 1.f);
+		bool leftSide = Left < paddle->Left;
+		float distanceFromCenter = std::abs(Left - paddle->Left);
+		float percantage = distanceFromCenter / 45;
+		float angle = 135.f - percantage * deviation * (leftSide ? -1.f : 1.f);
 		setAngle(angle);
+
 		return true;
 	}
 	return false;
@@ -64,18 +60,18 @@ bool Ball::checkColission()
 //--------------------------------------------------------------
 float Ball::getLeft()
 {
-	return shape_.getPosition().x - shape_.getRadius();
+	return shape_.getPosition().x;
 }
 float Ball::getRight()
 {
-	return shape_.getPosition().x + shape_.getRadius();
+	return shape_.getPosition().x + shape_.getRadius()*2;
 }
 float Ball::getTop()
 {
-	return shape_.getPosition().y - shape_.getRadius();
+	return shape_.getPosition().y;
 }
 float Ball::getBottom()
 {
-	return shape_.getPosition().y + shape_.getRadius();
+	return shape_.getPosition().y + shape_.getRadius()*2;
 }
 //--------------------------------------------------------------

@@ -28,7 +28,7 @@ void Paddle::draw(RenderWindow& window)
 	window.draw(sprite);
 }
 //-------------------------------------------------------
-void Paddle::update(float time)
+void Paddle::update(const float& time)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Right) && Right < Constants::WHIDTH)
 	{

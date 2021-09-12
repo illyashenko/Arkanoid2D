@@ -13,7 +13,7 @@ public:
 
 	Ball();
 	void draw(RenderWindow& window);
-	void update(float time);
+	void update(const float& time);
 	void setAngle(float angle);
 	float getAngle();
 	bool checkColission(Paddle* paddle);
